@@ -4,8 +4,6 @@ import android.os.Bundle
 import android.view.View
 import android.widget.Toast
 import androidx.activity.viewModels
-import androidx.appcompat.app.AppCompatActivity
-import com.aslamconsole.nctbbooks.databinding.ActivityHomeBinding
 import com.aslamconsole.nctbbooks.databinding.ActivityLoginBinding
 import com.aslamconsole.nctbbooks.ui.base.BaseActivity
 import com.aslamconsole.nctbbooks.utils.startHomeActivity

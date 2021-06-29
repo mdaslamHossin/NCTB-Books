@@ -11,17 +11,19 @@ import com.google.firebase.firestore.DocumentSnapshot
  * aslam.hossin@monstar-lab.com
  */
 
-data class Category(val id: Int, val name: String) {
+data class Category(val id: Int, val name: String, val color: String) {
 
     companion object {
 
         private const val CAT_ID = "id"
         private const val CAT_NAME = "name"
+        private const val CAT_COLOR = "color"
         fun DocumentSnapshot.toCategory(): Category? {
             return try {
                 val id = getLong(CAT_ID)?.toInt() ?: -1
                 val name = getString(CAT_NAME) ?: ""
-                Category(id, name)
+                val color = getString(CAT_COLOR) ?: "#ffffff"
+                Category(id, name, color)
             } catch (e: Exception) {
                 Log.e(BOOK_CATEGORY_COLLECTION, "$e")
                 null

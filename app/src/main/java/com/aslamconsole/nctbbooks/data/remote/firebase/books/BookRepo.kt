@@ -10,6 +10,5 @@ import com.aslamconsole.nctbbooks.data.dto.Category
  * aslam.hossin@monstar-lab.com
  */
 interface BookRepo {
-
     suspend fun getBooks(id:Int): List<Book>
 }

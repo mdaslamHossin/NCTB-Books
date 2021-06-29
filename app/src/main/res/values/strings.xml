@@ -1,3 +1,6 @@
 <resources>
   <string name="app_name">NCTB Books</string>
+  <string name="read_book"></string>
+  <string name="bangla_version">বাংলা ভার্শন</string>
+  <string name="english_version">ইংরেজি ভার্শন</string>
 </resources>

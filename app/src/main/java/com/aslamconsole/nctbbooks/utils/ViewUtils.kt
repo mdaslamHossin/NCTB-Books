@@ -3,7 +3,7 @@ package com.aslamconsole.nctbbooks.utils
 import android.content.Context
 import android.content.Intent
 import com.aslamconsole.nctbbooks.ui.auth.LoginActivity
-import com.aslamconsole.nctbbooks.ui.home.HomeActivity
+import com.aslamconsole.nctbbooks.ui.category.CategoryActivity
 
 
 /**
@@ -13,7 +13,7 @@ import com.aslamconsole.nctbbooks.ui.home.HomeActivity
  */
 
 fun Context.startHomeActivity() =
-    Intent(this, HomeActivity::class.java).also {
+    Intent(this, CategoryActivity::class.java).also {
         it.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
         startActivity(it)
     }

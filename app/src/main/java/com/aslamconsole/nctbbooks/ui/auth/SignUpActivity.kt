@@ -5,10 +5,9 @@ import android.os.Bundle
 import android.view.View
 import android.widget.Toast
 import androidx.activity.viewModels
-import androidx.appcompat.app.AppCompatActivity
 import com.aslamconsole.nctbbooks.databinding.ActivitySignupBinding
 import com.aslamconsole.nctbbooks.ui.base.BaseActivity
-import com.aslamconsole.nctbbooks.ui.home.HomeActivity
+import com.aslamconsole.nctbbooks.ui.category.CategoryActivity
 import com.aslamconsole.nctbbooks.utils.startHomeActivity
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -35,7 +34,7 @@ class SignUpActivity : BaseActivity(), AuthListener {
 
     override fun onStarted() {
         binding.progressbar.visibility = View.VISIBLE
-        Intent(this, HomeActivity::class.java).also {
+        Intent(this, CategoryActivity::class.java).also {
             it.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
             startActivity(it)
         }

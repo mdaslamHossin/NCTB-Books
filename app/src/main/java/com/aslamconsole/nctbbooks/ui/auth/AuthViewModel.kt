@@ -2,8 +2,10 @@ package com.aslamconsole.nctbbooks.ui.auth
 
 import android.content.Intent
 import android.view.View
+import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.aslamconsole.nctbbooks.data.remote.firebase.user.UserRepo
+import com.google.firebase.auth.FirebaseAuth
 import dagger.hilt.android.lifecycle.HiltViewModel
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable
@@ -22,6 +24,7 @@ class AuthViewModel @Inject constructor(private val repository: UserRepo) : View
     //email and password for the input
     var email: String? = null
     var password: String? = null
+    var isLogin = MutableLiveData<Boolean>()
 
     //auth listener
     var authListener: AuthListener? = null
@@ -100,7 +103,7 @@ class AuthViewModel @Inject constructor(private val repository: UserRepo) : View
         }
     }
 
-    fun goToForgotPassword(view: View){
+    fun goToForgotPassword(view: View) {
         Intent(view.context, ForgotPasswordActivity::class.java).also {
             view.context.startActivity(it)
         }
@@ -110,6 +113,10 @@ class AuthViewModel @Inject constructor(private val repository: UserRepo) : View
         Intent(view.context, LoginActivity::class.java).also {
             view.context.startActivity(it)
         }
+    }
+
+    fun isLogin() {
+        isLogin.value = FirebaseAuth.getInstance().currentUser != null
     }
 
     //disposing the disposables
